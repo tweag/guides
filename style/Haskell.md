@@ -86,10 +86,9 @@ usually indented 2 spaces. Some examples:
 ### Blank Lines
 
 One blank line between top-level definitions. No blank lines between
-type signatures and function definitions. Two blank lines between the
-last import and the first top-level definition. Add one blank line
-between functions in a type class instance declaration if the
-functions bodies are large. Use your judgement.
+type signatures and function definitions. Add one blank line between
+functions in a type class instance declaration if the functions bodies
+are large. Use your judgement.
 
 ### Whitespace
 
