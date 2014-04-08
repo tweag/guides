@@ -105,7 +105,7 @@ Align the constructors in a data type definition. Example:
 ```Haskell
 data Tree a = Branch !a !(Tree a) !(Tree a)
             | Leaf
-```    
+```
 For long type names the following formatting is also acceptable:
 ```Haskell
 data HttpException
@@ -115,10 +115,10 @@ data HttpException
 Format records as follows:
 ```Haskell
 data Person = Person
-    { firstName :: !String  -- ^ First name
-    , lastName  :: !String  -- ^ Last name
-    , age       :: !Int     -- ^ Age
-    } deriving (Eq, Show)
+  { firstName :: !String  -- ^ First name
+  , lastName  :: !String  -- ^ Last name
+  , age       :: !Int     -- ^ Age
+  } deriving (Eq, Show)
 ```
 ### List Declarations
 
@@ -151,8 +151,8 @@ In the case of data type definitions you must put the pragma before
 the type it applies to. Example:
 ```Haskell
 data Array e = Array
-    {-# UNPACK #-} !Int
-    !ByteArray
+  {-# UNPACK #-} !Int
+  !ByteArray
 ```
 ### Hanging Lambdas
 
@@ -161,8 +161,8 @@ your judgement. Some examples:
 ```Haskell
 bar :: IO ()
 bar = forM_ [1, 2, 3] $ \n -> do
-          putStrLn "Here comes a number!"
-          print n
+        putStrLn "Here comes a number!"
+        print n
 
 foo :: IO ()
 foo = alloca 10 $ \a ->
@@ -174,14 +174,14 @@ foo = alloca 10 $ \a ->
 Format export lists as follows:
 ```Haskell
 module Data.Set
-    ( -- * The @Set@ type
-      Set
-    , empty
-    , singleton
+  ( -- * The @Set@ type
+    Set
+  , empty
+  , singleton
 
-      -- * Querying
-    , member
-    ) where
+    -- * Querying
+  , member
+  ) where
 ```
 ### If-then-else expressions
 
@@ -283,21 +283,21 @@ Record example:
 ```Haskell
 -- | Bla bla bla.
 data Person = Person
-    { age  :: !Int     -- ^ Age
-    , name :: !String  -- ^ First name
-    }
+  { age  :: !Int     -- ^ Age
+  , name :: !String  -- ^ First name
+  }
 ```
 For fields that require longer comments format them like so:
 ```Haskell
 data Record = Record
-    { -- | This is a very very very long comment that is split over
-      -- multiple lines.
-      field1 :: !Text
-      
-      -- | This is a second very very very long comment that is split
-      -- over multiple lines.
-    , field2 :: !Int
-    }
+  { -- | This is a very very very long comment that is split over
+    -- multiple lines.
+    field1 :: !Text
+
+    -- | This is a second very very very long comment that is split
+    -- over multiple lines.
+  , field2 :: !Int
+  }
 ```
 ### End-of-Line Comments
 
@@ -306,8 +306,8 @@ Your editor might let you set a preferred column for end-of-line
 comments. Align comments for data type definitions. Some examples:
 ```Haskell
 data Parser = Parser
-    !Int                                  -- Current position
-    !ByteString                           -- Remaining input
+  !Int                                  -- Current position
+  !ByteString                           -- Remaining input
 
 foo :: Int -> Int
 foo n = salt * 32 + 9
@@ -343,8 +343,8 @@ Where appropriate, add an unabbreviated prefix to the name of record
 fields. Example:
 ```Haskell
 -- | Messages consist of their typeRep fingerprint and their encoding
-data Message = Message 
-  { messageFingerprint :: !Fingerprint 
+data Message = Message
+  { messageFingerprint :: !Fingerprint
   , messageEncoding    :: !BSL.ByteString
   }
 ```
@@ -382,23 +382,23 @@ spend thinking about evaluation order.
 ```Haskell
 -- Good
 data Point = Point
-    { pointX :: !Double  -- ^ X coordinate
-    , pointY :: !Double  -- ^ Y coordinate
-    }
+  { pointX :: !Double  -- ^ X coordinate
+  , pointY :: !Double  -- ^ Y coordinate
+  }
 
 -- Bad
 data Point = Point
-    { pointX :: Double  -- ^ X coordinate
-    , pointY :: Double  -- ^ Y coordinate
-    }
+  { pointX :: Double  -- ^ X coordinate
+  , pointY :: Double  -- ^ Y coordinate
+  }
 ```
 Additionally, unpacking simple fields often improves performance and
 reduces memory usage:
 ```Haskell
 data Point = Point
-    { pointX :: {-# UNPACK #-} !Double  -- ^ X coordinate
-    , pointY :: {-# UNPACK #-} !Double  -- ^ Y coordinate
-    }
+  { pointX :: {-# UNPACK #-} !Double  -- ^ X coordinate
+  , pointY :: {-# UNPACK #-} !Double  -- ^ Y coordinate
+  }
 ```
 As an alternative to the `UNPACK` pragma, you can put
 ```Haskell
