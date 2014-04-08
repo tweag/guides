@@ -63,10 +63,12 @@ enforce this:
 
 ### Indentation
 
-Tabs are illegal. Use spaces for indenting. Indent your code blocks
-with *4 spaces*. Indent the `where` keyword two spaces to set it apart
-from the rest of the code and indent the definitions in a `where`
-clause 2 spaces. Guards are usually indented 2 spaces. Some examples:
+Tabs are illegal. Use spaces for indenting. Use *2 spaces* for each
+indentation level. The only exception is for code blocks inside
+a definition, which should be indented with *4 spaces*. Indent the
+`where` keyword two spaces to set it apart from the rest of the code
+and indent the definitions in a `where` clause 2 spaces. Guards are
+usually indented 2 spaces. Some examples:
 
     sayHello :: IO ()
     sayHello = do
