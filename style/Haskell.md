@@ -200,21 +200,8 @@ foo = if ...
 ```
 In monadic code, so long as you use the Haskell 2010 dialect and
 above, you can use the same alignment as above. A different alignment
-rule for monadic code is no longer necessary. Otherwise, you should be
-consistent with the 4-spaces indent rule, and the `then` and the
-`else` keyword should be aligned. Examples:
-```Haskell
-foo = do
-    instruction <- decodeInstruction
-    skip <- load Memory.skip
-    if skip == 0x0000
-        then do
-            execute instruction
-            addCycles $ instructionCycles instruction
-        else do
-            store Memory.skip 0x0000
-            addCycles 1
-```
+rule for monadic code is no longer necessary.
+
 ### Case expressions
 
 The alternatives in a case expression can be indented using either of
