@@ -1,4 +1,4 @@
-guides
+Guides
 ======
 
-Designing, programming and deploying, in style.
+Guides about designing, programming and deploying.
