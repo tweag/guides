@@ -109,8 +109,8 @@ data Tree a = Branch !a !(Tree a) !(Tree a)
 For long type names the following formatting is also acceptable:
 ```Haskell
 data HttpException
-    = InvalidStatusCode Int
-    | MissingContentHeader
+  = InvalidStatusCode Int
+  | MissingContentHeader
 ```
 Format records as follows:
 ```Haskell
