@@ -1,8 +1,8 @@
 Code review checklist
 =====================
 
-check for inverted boolean conditions 
--------------------------------------
+Inverted boolean conditions
+---------------------------
 
 Functions like
 ```Haskell
@@ -19,8 +19,8 @@ remove from a list all the occurrences of 0, a wrong solution is
 `filter (==0) [0,1,0,1]` the correct one being
 `filter (/=0) [0,1,0,1]`.
 
-Check for boundaries of enumerations and recursive functions
-------------------------------------------------------------
+Boundaries of enumerations and recursive functions
+--------------------------------------------------
 
 The limits in expressions of the form `[x,x-1..y]`, `[x..]`, `[x..y]`
 must be checked to be correct.
@@ -32,16 +32,16 @@ Check that all recursive functions terminate (well-foundedness). The
 arguments of each recursive call must ensure progress towards the base
 case, and the base case has to be defined!
 
-Check the race conditions solved by locks
------------------------------------------
+Race conditions solved by locks
+-------------------------------
 
 When MVars are used as a locking mechanisms it should be checked that
 the resources for which the `MVar` is intended are really protected,
 and furthermore that such protection is not redundant with other
 locks/MVars.
 
-Check for laziness when copying non-garbage-collected data
-----------------------------------------------------------
+Laziness when copying non-garbage-collected data
+------------------------------------------------
 
 If the program manipulates memory which is released regardless of the
 references that exist to it, care must be taken to ensure that
@@ -56,8 +56,8 @@ not well done with `map copy xs` since it defers copying until the
 result of the map is needed. The good solution would be more strict:
 `mapM (evaluate . copy) xs`.
 
-Check for copyright notices at the top of every module
-------------------------------------------------------
+Copyright notices at the top of every module
+--------------------------------------------
 
 ```Haskell
 -- |
@@ -99,8 +99,8 @@ arguments.
 
 [well-typed-foldl]: http://www.well-typed.com/blog/90/
 
-Look for memory leaks when writing pure code
---------------------------------------------
+Memory leaks when writing pure code
+-----------------------------------
 
 For instance, evaluating
 ```Haskell
