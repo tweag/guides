@@ -89,12 +89,15 @@ import ...
 ...
 ```
 
-Consider using `foldl'` when using `foldl`
-------------------------------------------
+`foldl`: just say no - use `foldl'`
+-----------------------------------
 
-foldl' could keep the accumulator parameter small sometimes by
-evaluating it to WHNF.
+`foldl` is approximately *never* appropriate. See
+[here][well-typed-foldl] for a longer discussion. Executive summary:
+`foldl f z xs` leads to space leaks, even when `f` is strict in both
+arguments.
 
+[well-typed-foldl]: http://www.well-typed.com/blog/90/
 
 Look for memory leaks when writing pure code
 --------------------------------------------
