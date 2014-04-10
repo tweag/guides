@@ -40,6 +40,14 @@ the resources for which the `MVar` is intended are really protected,
 and furthermore that such protection is not redundant with other
 locks/MVars.
 
+Unrevertable changes under MVar
+-------------------------------
+
+When exception is thrown in MVar action (`modifyMVar`, `withMVar`..)
+MVar is put into previous state. However it may lead to a wrong state
+in case on unrevertable changes, e.g. network actions or changes in
+other mutable variables.
+
 Laziness when copying non-garbage-collected data
 ------------------------------------------------
 
@@ -98,6 +106,12 @@ import ...
 arguments.
 
 [well-typed-foldl]: http://www.well-typed.com/blog/90/
+
+Use strict versions of containers where appropriate
+---------------------------------------------------
+
+In most cases strict version of containers (e.g. `Data.Map.Strict`) are 
+prefered over the lazy version because they doesn't lead to a space leaks.
 
 Memory leaks when writing pure code
 -----------------------------------
