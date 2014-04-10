@@ -98,10 +98,11 @@ Use strict versions of containers where appropriate
 ---------------------------------------------------
 
 In most cases strict version of containers (e.g. `Data.Map.Strict`) are 
-prefered over the lazy version because they doesn't lead to a space leaks.
+prefered over the lazy version - they perform better in most cases and
+make space leaks less likely.
 
-Memory leaks when writing pure code
------------------------------------
+List prefix memory leaks
+------------------------
 
 Evaluating say
 ```Haskell
