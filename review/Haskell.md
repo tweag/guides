@@ -138,3 +138,7 @@ ensure that the arguments given to the intermediate computations `f`
 and `g` are the intended ones. Thus we could catch uses of, say, `x`
 where `x'` was intended.
 
+*Note:* the above is bad style. Such code should be written
+pointlessly, with `f` and `g` chained. Or pointfully, but then with
+meaningful names for the intermediate state rather than chains of
+apostrophes.
