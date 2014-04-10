@@ -1,6 +1,25 @@
 Code review checklist
 =====================
 
+When reviewing Haskell code, do watch out for the following points.
+
+Copyright notices at the top of every module
+--------------------------------------------
+
+```Haskell
+-- |
+-- Copyright: (C) 2014 EURL Tweag
+--
+-- Module description
+--
+
+{-# LANGUAGE    ... #-}
+{-# OPTIONS_GHC ... #-}
+module M where
+
+...
+```
+
 Inverted boolean conditions
 ---------------------------
 
@@ -63,23 +82,6 @@ collected. Attempting to copy the data before the memory is released is
 not well done with `map copy xs` since it defers copying until the
 result of the map is needed. The good solution would be more strict:
 `mapM (evaluate . copy) xs`.
-
-Copyright notices at the top of every module
---------------------------------------------
-
-```Haskell
--- |
--- Copyright: (C) 2014 EURL Tweag
---
--- Module description
---
-
-{-# LANGUAGE    ... #-}
-{-# OPTIONS_GHC ... #-}
-module M where
-
-...
-```
 
 `foldl`: just say no - use `foldl'`
 -----------------------------------
