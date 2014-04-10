@@ -103,30 +103,27 @@ prefered over the lazy version because they doesn't lead to a space leaks.
 Memory leaks when writing pure code
 -----------------------------------
 
-For instance, evaluating
+Evaluating say
 ```Haskell
 case take n xs of
-  (_:xss) -> ... xss ...
+  (_:xs') -> ... xs' ...
 ```
-would retain a potentially long
-list `xs`.
+may keep all of `xs` in memory until the end of `xs'` is evaluated.
 
-Fully evaluating `take 1 xs` would require writing either using
+This memory leak can be fixed with
 ```Haskell
 case Control.DeepSeq.force $ take n xs of
-  (_:xss) -> ... xss ...
+  (_:xs') -> ... xs' ...
 ```
-or using a function like
+though the above also forces evaluation of the list elements, which is
+often overkill. The following can be enough:
 ```Haskell
-seqSpine :: [a] -> b -> b
-seqSpine     [] = id
-seqSpine (_:xs) = seqSpine xs
+forceSpine xs = length xs `seq` xs
 
-forceSpine xs = seqSpine xs xs
-
-case force (take n xs) of
-  (_:xss) -> ... xss ...
+case forceSpine $ take n xs of
+  (_:xs') -> ... xs' ...
 ```
+Or use `seqList` from the `parallel` package.
 
 Names of intermediate computations
 ----------------------------------
