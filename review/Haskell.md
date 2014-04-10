@@ -63,10 +63,11 @@ locks/MVars.
 Unrevertable changes under MVar
 -------------------------------
 
-When exception is thrown in MVar action (`modifyMVar`, `withMVar`..)
-MVar is put into previous state. However it may lead to a wrong state
-in case on unrevertable changes, e.g. network actions or changes in
-other mutable variables.
+When an exception is thrown during an MVar action (`modifyMVar`,
+`withMVar`..) the MVar is reverted to its previous state. However,
+this behaviour may lead to an inconsistent state in the presence of
+other side effects, e.g. network actions or changes in other mutable
+variables.
 
 Laziness when copying non-garbage-collected data
 ------------------------------------------------
