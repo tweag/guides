@@ -19,6 +19,7 @@ module M where
 
 ...
 ```
+Use *exactly one* `LANGUAGE` pragma per extension.
 
 Inverted boolean conditions
 ---------------------------
