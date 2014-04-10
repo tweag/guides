@@ -81,22 +81,6 @@ module M where
 ...
 ```
 
-Note that the character `|` needs to be dropped if the file does not
-start with `module`.
-
-```Haskell
--- Copyright: (C) 2014 EURL Tweag
---
--- File description
---
-
-{-# LANGUAGE    ... #-}
-{-# OPTIONS_GHC ... #-}
-import ...
-
-...
-```
-
 `foldl`: just say no - use `foldl'`
 -----------------------------------
 
