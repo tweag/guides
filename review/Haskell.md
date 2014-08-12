@@ -18,7 +18,9 @@ module M where
 
 ...
 ```
-Use *exactly one* `LANGUAGE` pragma per extension.
+Check that there is *exactly one* `LANGUAGE` pragma per extension, in
+alphabetical order to make it easy to spot duplicates, and ideally
+that extraneous extensions are not turned on.
 
 ### Inverted boolean conditions
 

@@ -440,3 +440,31 @@ no warnings.
 
 Use of `Debug.Trace` and other debugging modules should not be
 committed to any stable branches.
+
+### Lenses
+
+Where appropriate, define lenses for all fields in a record. Use the
+`_` prefix to name fields. When using the [lens package][lens], use
+`makeClassy` [where possible][lens-makeClassy] to generate lenses
+rather than `makeLenses`. This is to make it easy to export all lenses
+for a record all at once.
+```Haskell
+module Person
+  ( Person(..)
+  , HasPerson(..)
+  ) where
+
+data Person = Person
+  { _firstName :: !String  -- ^ First name
+  , _lastName  :: !String  -- ^ Last name
+  , _age       :: !Int     -- ^ Age
+  } deriving (Eq, Show)
+
+makeClassy ''Person
+```
+For consistency, if a record has lenses defined, always use the lens
+to get or set the field of a record (rather than `_fieldName`). Field
+names should only be used to initialize the record.
+
+[lens]: http://hackage.haskell.org/package/lens
+[lens-makeClassy]: http://hackage.haskell.org/package/lens-4.3.3/docs/Control-Lens-TH.html#v:makeClassy
