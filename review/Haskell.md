@@ -69,7 +69,7 @@ variables.
 
 If the program manipulates memory which is released regardless of the
 references that exist to it, care must be taken to ensure that
-references do not exist after the memory is released. 
+references do not exist after the memory is released.
 
 This happens often in Haskell bindings to OS or hardware resources
 which the garbage collector does not manage. Say we have a list of
@@ -91,7 +91,7 @@ arguments.
 
 ### Use strict versions of containers where appropriate
 
-In most cases strict version of containers (e.g. `Data.Map.Strict`) are 
+In most cases strict version of containers (e.g. `Data.Map.Strict`) are
 prefered over the lazy version - they perform better in most cases and
 make space leaks less likely.
 
