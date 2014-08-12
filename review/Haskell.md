@@ -117,7 +117,8 @@ forceSpine xs = length xs `seq` xs
 case forceSpine $ take n xs of
   (_:xs') -> ... xs' ...
 ```
-Or use `seqList` from the `parallel` package.
+Or use `seqList` from the `parallel` package. Or better yet, use
+a strict list datatype rather than the standard lazy one.
 
 ### Names of intermediate computations
 
