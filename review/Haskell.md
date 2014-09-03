@@ -7,7 +7,7 @@ When reviewing Haskell code, do watch out for the following points.
 
 ```Haskell
 -- |
--- Copyright: (C) 2014 EURL Tweag
+-- Copyright: (C) 2014 Tweag I/O Limited
 --
 -- Module description
 --
