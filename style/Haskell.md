@@ -438,8 +438,9 @@ no warnings.
 
 ### Debug facilities
 
-Use of `Debug.Trace` and other debugging modules should not be
-committed to any stable branches.
+Use of `unsafePerformIO`-based debugging facilites, such as `Debug.Trace` should not be
+committed to any stable branches. If you need logging, use a proper method and ship it,
+so that further development benefits from your debugging efforts.
 
 ### Lenses
 
