@@ -39,9 +39,10 @@ be able to quickly understand what you've done, and overuse of
 abstractions just serves to obscure the really tricky stuff, and
 there's no shortage of that in this project.
 
-If you must make stylistic changes, commit them separately from
-functional changes, so that someone looking back through the change
-logs can easily distinguish them.
+The general rule is to stick to the same coding style as is already
+used in the file you're editing. If you must make stylistic changes,
+commit them separately from functional changes, so that someone
+looking back through the change logs can easily distinguish them.
 
 Formatting
 ----------
