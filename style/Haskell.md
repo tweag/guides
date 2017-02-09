@@ -410,19 +410,13 @@ data Point = Point
   , pointY :: {-# UNPACK #-} !Double  -- ^ Y coordinate
   }
 ```
-As an alternative to the `UNPACK` pragma, you can put
-```Haskell
-{-# OPTIONS_GHC -funbox-strict-fields #-}
-```
-at the top of the file. Including this flag in the file inself instead
-of e.g. in the Cabal file is preferable as the optimization will be
-applied even if someone compiles the file using other means (i.e. the
-optimization is attached to the source code it belongs to).
 
-Note that `-funbox-strict-fields` applies to all strict fields, not
-just small fields (e.g. `Double` or `Int`). If you're using GHC 7.4 or
-later you can use `NOUNPACK` to selectively opt-out for the unpacking
-enabled by `-funbox-strict-fields`.
+As an alternative to the `UNPACK` pragma, it is possible to add
+```Haskell {-# OPTIONS_GHC -funbox-strict-fields #-} ``` at the top of
+the file, but this should be avoided, because `-funbox-strict-fields`
+applies to all strict fields, not just small fields (e.g. `Double` or
+`Int`). It's best not to have to selectively opt-out from the
+unpacking (which isn't always a performance win!) using `NOUNPACK`.
 
 ### Functions
 
