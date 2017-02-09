@@ -237,14 +237,10 @@ Align the `->` arrows when it helps readability.
 Imports
 -------
 
-Imports should be grouped in the following order:
-
-1. local application/library specific imports
-2. related third party imports
-3. standard library imports
-
-Put a blank line between each group of imports. The imports in each
-group should be sorted alphabetically, by module name.
+Imports should be listed in alphabetical order with no intervening
+blank lines, except for any explicit `Prelude` import, which must
+always come last. The reason for this exception is that some redundant
+import warnings are sensitive to the order of the `Prelude` import.
 
 Always use explicit import lists or `qualified` imports for standard
 and third party libraries. This makes the code more robust against
