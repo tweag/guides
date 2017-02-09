@@ -137,7 +137,7 @@ pointlessly, with `f` and `g` chained. Or pointfully, but then with
 meaningful names for the intermediate state rather than chains of
 apostrophes.
 
-### Catamarphisms
+### Catamorphisms
 
 Use of catamorphisms (e.g. `foldr`, `foldl`) and other special case
 higher-order functions (such as `map`) is preferable to writing
