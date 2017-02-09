@@ -136,3 +136,60 @@ where `x'` was intended.
 pointlessly, with `f` and `g` chained. Or pointfully, but then with
 meaningful names for the intermediate state rather than chains of
 apostrophes.
+
+### Catamarphisms
+
+Use of catamorphisms (e.g. `foldr`, `foldl`) and other special case
+higher-order functions (such as `map`) is preferable to writing
+structurally recursive functions with explicit recursion. This is
+because a fold makes it a type error to forget the base case -
+a problem with the code that could otherwise go undetected. It also
+documents the fact that the function is supposed to be structurally
+recursive, as opposed to functions that use general recursion.
+
+### Data types
+
+Constructor fields should be strict, unless there's an explicit reason
+to make them lazy. This avoids many common pitfalls caused by too much
+laziness and reduces the number of brain cycles the programmer has to
+spend thinking about evaluation order.
+
+```Haskell
+-- Good
+data Point = Point
+  { pointX :: !Double  -- ^ X coordinate
+  , pointY :: !Double  -- ^ Y coordinate
+  }
+
+-- Bad
+data Point = Point
+  { pointX :: Double  -- ^ X coordinate
+  , pointY :: Double  -- ^ Y coordinate
+  }
+```
+
+Additionally, unpacking simple fields often improves performance and
+reduces memory usage:
+
+```Haskell
+data Point = Point
+  { pointX :: {-# UNPACK #-} !Double  -- ^ X coordinate
+  , pointY :: {-# UNPACK #-} !Double  -- ^ Y coordinate
+  }
+```
+
+### Functions
+
+Have function arguments be lazy unless you explicitly need them to be
+strict.
+
+The most common case when you need strict function arguments is in
+recursion with an accumulator:
+
+```Haskell
+mysum :: [Int] -> Int
+mysum = go 0
+  where
+    go !acc []    = acc
+    go acc (x:xs) = go (acc + x) xs
+```
