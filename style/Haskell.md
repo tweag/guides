@@ -375,7 +375,9 @@ recursive, as opposed to functions that use general recursion.
 Dealing with laziness
 ---------------------
 
-By default, use strict data types and lazy functions.
+By default, use strict data types and lazy functions. Since GHC 8.0.1,
+you can use the `-XStrictData` language extension to avoid forgetting
+bangs.
 
 ### Data types
 
