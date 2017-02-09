@@ -88,6 +88,10 @@ filter p (x:xs)
   | otherwise = filter p xs
 ```
 
+As a general rule, *indentation of a line should not depend on the
+length of any identifier in preceding lines*, only on layout
+constraints.
+
 ### Blank Lines
 
 One blank line between top-level definitions. No blank lines between
@@ -135,14 +139,7 @@ exceptions =
     , InternalServerError
     ]
 ```
-Optionally, you can skip the first newline. Use your judgement.
-```Haskell
-directions = [ North
-             , East
-             , South
-             , West
-             ]
-```
+
 ### Pragmas
 
 Put pragmas immediately following the function they apply to.
@@ -167,14 +164,16 @@ your judgement. Some examples:
 
 ```Haskell
 bar :: IO ()
-bar = forM_ [1, 2, 3] $ \n -> do
-        putStrLn "Here comes a number!"
-        print n
+bar =
+    forM_ [1, 2, 3] $ \n -> do
+      putStrLn "Here comes a number!"
+      print n
 
 foo :: IO ()
-foo = alloca 10 $ \a ->
-      alloca 20 $ \b ->
-      cFunction a b
+foo =
+    alloca 10 $ \a ->
+    alloca 20 $ \b ->
+    cFunction a b
 ```
 
 ### Export Lists
@@ -202,11 +201,14 @@ line length allows it).
 When writing non-monadic code (i.e. when not using `do`) and guards
 can't be used, you can align if-then-else expressions like you would
 normal expressions:
+
 ```Haskell
-foo = if ...
-      then ...
-      else ...
+foo =
+    if ...
+    then ...
+    else ...
 ```
+
 In monadic code, so long as you use the Haskell 2010 dialect and
 above, you can use the same alignment as above. A different alignment
 rule for monadic code is no longer necessary.
@@ -225,9 +227,10 @@ foobar = case something of
 or as
 
 ```Haskell
-foobar = case something of
-           Just j  -> foo
-           Nothing -> bar
+foobar =
+    case something of
+      Nothing -> foo
+      Just j -> bar
 ```
 Align the `->` arrows when it helps readability.
 
