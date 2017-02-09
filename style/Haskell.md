@@ -276,6 +276,11 @@ Comments
 Write proper sentences; start with a capital letter and use proper
 punctuation.
 
+### End-of-line comments
+
+End-of-line comments should be separated from code by at least two
+spaces.
+
 ### Top-Level Definitions
 
 Comment every top level function (particularly exported functions),
@@ -313,21 +318,7 @@ data Record = Record
   , field2 :: !Int
   }
 ```
-### End-of-Line Comments
 
-Separate end-of-line comments from the code using *at least* 2 spaces.
-Your editor might let you set a preferred column for end-of-line
-comments. Align comments for data type definitions. Some examples:
-```Haskell
-data Parser = Parser
-  !Int                                  -- Current position
-  !ByteString                           -- Remaining input
-
-foo :: Int -> Int
-foo n = salt * 32 + 9
-  where
-    salt = 453645243                      -- Magic hash salt.
-```
 ### Links
 
 Use in-line links economically. You are encouraged to add links for
