@@ -82,9 +82,9 @@ sayHello = do
     greeting name = "Hello, " ++ name ++ "!"
 
 filter :: (a -> Bool) -> [a] -> [a]
-filter _ []     = []
+filter _ [] = []
 filter p (x:xs)
-  | p x       = x : filter p xs
+  | p x = x : filter p xs
   | otherwise = filter p xs
 ```
 
@@ -102,19 +102,17 @@ better judgement for the insertion of spaces around arithmetic
 operators but always be consistent about whitespace on either side of
 a binary operator. Don't insert a space after a lambda.
 
+Don't vertically align type signatures, patterns in function
+declarations and comments. This just causes spurious merge conflicts.
+
 ### Data Declarations
 
 Align the constructors in a data type definition. Example:
 
 ```Haskell
-data Tree a = Branch !a !(Tree a) !(Tree a)
-            | Leaf
-```
-For long type names the following formatting is also acceptable:
-```Haskell
-data HttpException
-  = InvalidStatusCode Int
-  | MissingContentHeader
+data Tree a
+  = Branch !a !(Tree a) !(Tree a)
+  | Leaf
 ```
 
 Format records as follows:
@@ -122,8 +120,8 @@ Format records as follows:
 ```Haskell
 data Person = Person
   { firstName :: !String  -- ^ First name
-  , lastName  :: !String  -- ^ Last name
-  , age       :: !Int     -- ^ Age
+  , lastName :: !String  -- ^ Last name
+  , age :: !Int -- ^ Age
   } deriving (Eq, Show)
 ```
 
@@ -300,8 +298,8 @@ Record example:
 ```Haskell
 -- | Bla bla bla.
 data Person = Person
-  { age  :: !Int     -- ^ Age
-  , name :: !String  -- ^ First name
+  { age :: !Int -- ^ Age
+  , name :: !String -- ^ First name
   }
 ```
 For fields that require longer comments format them like so:
@@ -363,7 +361,7 @@ fields. Example:
 -- | Messages consist of their typeRep fingerprint and their encoding
 data Message = Message
   { messageFingerprint :: !Fingerprint
-  , messageEncoding    :: !BSL.ByteString
+  , messageEncoding :: !BSL.ByteString
   }
 ```
 
@@ -412,6 +410,7 @@ data Point = Point
   , pointY :: Double  -- ^ Y coordinate
   }
 ```
+
 Additionally, unpacking simple fields often improves performance and
 reduces memory usage:
 
