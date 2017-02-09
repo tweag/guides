@@ -94,10 +94,10 @@ constraints.
 
 ### Blank Lines
 
-One blank line between top-level definitions. No blank lines between
-type signatures and function definitions. Add one blank line between
-functions in a type class instance declaration if the functions bodies
-are large. Use your judgement.
+*One blank line* between top-level definitions. *No blank lines*
+between type signatures and function definitions. Add one blank line
+between functions in a type class instance declaration if the
+functions bodies are large. Use your judgement.
 
 ### Whitespace
 
@@ -142,8 +142,7 @@ exceptions =
 
 ### Pragmas
 
-Put pragmas immediately following the function they apply to.
-Example:
+Put pragmas immediately following the function they apply to. Example:
 ```Haskell
 id :: a -> a
 id x = x
@@ -152,9 +151,7 @@ id x = x
 In the case of data type definitions you must put the pragma before
 the type it applies to. Example:
 ```Haskell
-data Array e = Array
-  {-# UNPACK #-} !Int
-  !ByteArray
+data Array e = Array {-# UNPACK #-} !Int !ByteArray
 ```
 
 ### Hanging Lambdas
@@ -220,8 +217,8 @@ the two following styles:
 
 ```Haskell
 foobar = case something of
-    Just j  -> foo
-    Nothing -> bar
+    Nothing -> foo
+    Just j -> bar
 ```
 
 or as
@@ -232,7 +229,6 @@ foobar =
       Nothing -> foo
       Just j -> bar
 ```
-Align the `->` arrows when it helps readability.
 
 Imports
 -------
@@ -283,7 +279,7 @@ spaces.
 
 ### Top-Level Definitions
 
-Comment every top level function (particularly exported functions),
+Comment every top-level function (particularly exported functions),
 and provide a type signature; use Haddock syntax in the comments.
 Comment every exported data type. Function example:
 
@@ -291,10 +287,12 @@ Comment every exported data type. Function example:
 -- | Send a message on a socket. The socket must be in a connected
 -- state. Returns the number of bytes sent. Applications are
 -- responsible for ensuring that all data has been sent.
-send :: Socket      -- ^ Connected socket
-     -> ByteString  -- ^ Data to send
-     -> IO Int      -- ^ Bytes sent
+send
+  :: Socket -- ^ Connected socket
+  -> ByteString -- ^ Data to send
+  -> IO Int -- ^ Bytes sent
 ```
+
 For functions the documentation should give enough information to
 apply the function without looking at the function's definition.
 
@@ -321,14 +319,13 @@ data Record = Record
 
 ### Links
 
-Use in-line links economically. You are encouraged to add links for
-API names. It is not necessary to add links for all API names in
-a Haddock comment. We therefore recommend adding a link to an API name
-if:
+Use inline identifier links economically. You are encouraged to add
+links for API names. It is not necessary to add links for all API
+names in a Haddock comment. We therefore recommend adding a link to an
+API name if:
 
-* The user might actually want to click on it for more information (in
-  your judgment), and
-
+* The user might actually want to click on it for more information
+  (use your judgment), and
 * Only for the first occurrence of each API name in the comment (don't
   bother repeating a link)
 
@@ -444,9 +441,10 @@ no warnings.
 
 ### Debug facilities
 
-Use of `unsafePerformIO`-based debugging facilites, such as `Debug.Trace` should not be
-committed to any stable branches. If you need logging, use a proper method and ship it,
-so that further development benefits from your debugging efforts.
+Use of `unsafePerformIO`-based debugging facilites, such as
+`Debug.Trace` should not be committed to any stable branches. If you
+need logging, use a proper method and ship it, so that further
+development benefits from your debugging efforts.
 
 ### Lenses
 
