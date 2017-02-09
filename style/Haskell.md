@@ -56,6 +56,7 @@ conflicts.
 
 In Emacs, you can add the following code to your `init.el` file to
 enforce this:
+
 ```elisp
 (add-hook 'haskell-mode-hook (lambda () (set-fill-column 80)))
 (add-hook 'haskell-mode-hook
@@ -71,6 +72,7 @@ a definition, which should be indented with *4 spaces*. Indent the
 `where` keyword two spaces to set it apart from the rest of the code
 and indent the definitions in a `where` clause 2 spaces. Guards are
 usually indented 2 spaces. Some examples:
+
 ```Haskell
 sayHello :: IO ()
 sayHello = do
@@ -103,6 +105,7 @@ a binary operator. Don't insert a space after a lambda.
 ### Data Declarations
 
 Align the constructors in a data type definition. Example:
+
 ```Haskell
 data Tree a = Branch !a !(Tree a) !(Tree a)
             | Leaf
@@ -113,7 +116,9 @@ data HttpException
   = InvalidStatusCode Int
   | MissingContentHeader
 ```
+
 Format records as follows:
+
 ```Haskell
 data Person = Person
   { firstName :: !String  -- ^ First name
@@ -121,6 +126,7 @@ data Person = Person
   , age       :: !Int     -- ^ Age
   } deriving (Eq, Show)
 ```
+
 ### List Declarations
 
 Align the elements in the list. Example:
@@ -155,10 +161,12 @@ data Array e = Array
   {-# UNPACK #-} !Int
   !ByteArray
 ```
+
 ### Hanging Lambdas
 
 You may or may not indent the code following a "hanging" lambda. Use
 your judgement. Some examples:
+
 ```Haskell
 bar :: IO ()
 bar = forM_ [1, 2, 3] $ \n -> do
@@ -170,20 +178,22 @@ foo = alloca 10 $ \a ->
       alloca 20 $ \b ->
       cFunction a b
 ```
+
 ### Export Lists
 
 Format export lists as follows:
+
 ```Haskell
 module Data.Set
   ( -- * The @Set@ type
     Set
   , empty
   , singleton
-
     -- * Querying
   , member
   ) where
 ```
+
 ### If-then-else expressions
 
 Generally, guards should be preferred over if-then-else expressions,
@@ -207,12 +217,15 @@ rule for monadic code is no longer necessary.
 
 The alternatives in a case expression can be indented using either of
 the two following styles:
+
 ```Haskell
 foobar = case something of
     Just j  -> foo
     Nothing -> bar
 ```
+
 or as
+
 ```Haskell
 foobar = case something of
            Just j  -> foo
@@ -252,10 +265,12 @@ import list.
 The qualifier for well known modules, such as `ByteString` can be
 shortened further, eg `BS`. But in general, prefer descriptive
 qualifiers rather than one letter ones. For example
+
 ```Haskell
 import qualified Data.Map as Map                  -- good
 import qualified Data.Map as M                    -- not so good
 ```
+
 Comments
 --------
 
@@ -269,6 +284,7 @@ punctuation.
 Comment every top level function (particularly exported functions),
 and provide a type signature; use Haddock syntax in the comments.
 Comment every exported data type. Function example:
+
 ```Haskell
 -- | Send a message on a socket. The socket must be in a connected
 -- state. Returns the number of bytes sent. Applications are
@@ -289,12 +305,12 @@ data Person = Person
   }
 ```
 For fields that require longer comments format them like so:
+
 ```Haskell
 data Record = Record
   { -- | This is a very very very long comment that is split over
     -- multiple lines.
     field1 :: !Text
-
     -- | This is a second very very very long comment that is split
     -- over multiple lines.
   , field2 :: !Int
@@ -342,6 +358,7 @@ Exception: Two letter abbreviations, e.g. `IO`.
 
 Where appropriate, add an unabbreviated prefix to the name of record
 fields. Example:
+
 ```Haskell
 -- | Messages consist of their typeRep fingerprint and their encoding
 data Message = Message
@@ -349,6 +366,7 @@ data Message = Message
   , messageEncoding    :: !BSL.ByteString
   }
 ```
+
 This is not necessary for modules that export only one data type *and*
 are meant to be imported qualified.
 
@@ -380,6 +398,7 @@ Constructor fields should be strict, unless there's an explicit reason
 to make them lazy. This avoids many common pitfalls caused by too much
 laziness and reduces the number of brain cycles the programmer has to
 spend thinking about evaluation order.
+
 ```Haskell
 -- Good
 data Point = Point
@@ -395,6 +414,7 @@ data Point = Point
 ```
 Additionally, unpacking simple fields often improves performance and
 reduces memory usage:
+
 ```Haskell
 data Point = Point
   { pointX :: {-# UNPACK #-} !Double  -- ^ X coordinate
@@ -422,6 +442,7 @@ strict.
 
 The most common case when you need strict function arguments is in
 recursion with an accumulator:
+
 ```Haskell
 mysum :: [Int] -> Int
 mysum = go 0
@@ -429,6 +450,7 @@ mysum = go 0
     go !acc []    = acc
     go acc (x:xs) = go (acc + x) xs
 ```
+
 Misc
 ----
 
@@ -450,6 +472,7 @@ Where appropriate, define lenses for all fields in a record. Use the
 `makeClassy` [where possible][lens-makeClassy] to generate lenses
 rather than `makeLenses`. This is to make it easy to export all lenses
 for a record all at once.
+
 ```Haskell
 module Person
   ( Person(..)
@@ -464,6 +487,7 @@ data Person = Person
 
 makeClassy ''Person
 ```
+
 For consistency, if a record has lenses defined, always use the lens
 to get or set the field of a record (rather than `_fieldName`). Field
 names should only be used to initialize the record.
