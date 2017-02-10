@@ -26,7 +26,7 @@ http://hackage.haskell.org/package/distributed-process
 General Style
 -------------
 
-(section adopted from the [GHC Coding Style Guidelines][ghc-style].)
+(section adapted from the [GHC Coding Style Guidelines][ghc-style].)
 
 It's much better to write code that is transparent than to write code
 that is short.
@@ -36,8 +36,7 @@ a generic abstraction (not always, of course). Sometimes it's better
 to duplicate some similar code than to try to construct an elaborate
 generalisation with only two instances. Remember: other people have to
 be able to quickly understand what you've done, and overuse of
-abstractions just serves to obscure the really tricky stuff, and
-there's no shortage of that in this project.
+abstractions just serves to obscure the really tricky stuff.
 
 The general rule is to stick to the same coding style as is already
 used in the file you're editing. If you must make stylistic changes,
