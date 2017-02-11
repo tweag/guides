@@ -272,6 +272,9 @@ import qualified Data.Map as M                    -- not so good
 Comments
 --------
 
+Comments should be placed immediately *before* the line(s) of code
+they pertain to.
+
 ### Punctuation
 
 Write proper sentences; start with a capital letter and use proper
