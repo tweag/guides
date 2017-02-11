@@ -142,16 +142,22 @@ exceptions =
 ### Pragmas
 
 Put pragmas immediately following the function they apply to. Example:
+
 ```Haskell
 id :: a -> a
 id x = x
 {-# INLINE id #-}
 ```
+
 In the case of data type definitions you must put the pragma before
 the type it applies to. Example:
+
 ```Haskell
 data Array e = Array {-# UNPACK #-} !Int !ByteArray
 ```
+
+`LANGUAGE` pragmas should enable a single language extension per line,
+for easy addition and deletion.
 
 ### Hanging Lambdas
 
