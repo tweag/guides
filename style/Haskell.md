@@ -303,6 +303,21 @@ punctuation.
 End-of-line comments should be separated from code by at least two
 spaces.
 
+### Copyright notices
+
+A copyright notice, if any is desired, should appear at the very first
+non-blank line in the file, so as to make its scope clear and the
+notice easy to find. Use [Haddock fields][haddock-fields] to include
+it in API documentation. Example:
+
+```
+-- |
+-- Copyright: (c) 1901-1910 Foo corp
+-- License: All rights reserved.
+```
+
+[haddock-fields]: https://www.haskell.org/haddock/doc/html/ch03s03.html
+
 ### Top-Level Definitions
 
 Comment every top-level function (particularly exported functions),
