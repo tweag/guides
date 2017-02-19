@@ -109,6 +109,23 @@ space inside a parenthesized expression.
 Don't vertically align type signatures, patterns in function
 declarations and comments. This just causes spurious merge conflicts.
 
+### Applications
+
+If an application must spawn multiple lines to fit within the maximum
+line length, then write one argument on each line following the head,
+indented by one level:
+
+```
+let'sFold xs = do
+    foldr
+	  (\x y -> ...)
+	  Nothing
+	  xs
+```
+
+But consider naming the arguments instead to avoid multi-line
+expressions.
+
 ### Data Declarations
 
 Align the constructors in a data type definition. Example:
