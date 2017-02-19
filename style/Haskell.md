@@ -103,7 +103,8 @@ functions bodies are large. Use your judgement.
 Surround binary operators with a single space on either side. Use your
 better judgement for the insertion of spaces around arithmetic
 operators but always be consistent about whitespace on either side of
-a binary operator. Don't insert a space after a lambda.
+a binary operator. Don't insert a space after a lambda. Don't insert
+space inside a parenthesized expression.
 
 Don't vertically align type signatures, patterns in function
 declarations and comments. This just causes spurious merge conflicts.
