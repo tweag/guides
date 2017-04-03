@@ -1,4 +1,4 @@
-# Gamazeps' opiniated guide to Haskell
+# Gamazeps' opinionated guide to Haskell
 
 This guide is addressed to regular programmers interested in learning haskell.
 
