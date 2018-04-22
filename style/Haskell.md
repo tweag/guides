@@ -400,8 +400,18 @@ Use singular when naming modules e.g. use `Data.Map` and
 
 ### Warnings
 
-Code should be compilable with `-Wall -Werror`, i.e. there should be
-no warnings.
+Code should be compilable with `-Wall -Werror` at a minimum, i.e.
+there should be no warnings. `-Wall` does not turn on all warnings, so
+the following set:
+
+```
+-Wall
+-Wcompat
+-Wincomplete-record-updates
+-Wincomplete-uni-patterns
+-Wredundant-constraints
+-Wnoncanonical-monad-instances
+```
 
 ### Debug facilities
 
