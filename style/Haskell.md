@@ -1,5 +1,4 @@
-Haskell Style Guide
-===================
+# Haskell Style Guide
 
 (Originally from [Johan Tibell's style guide][tibbe-style-guide], with
 modifications from [the Snap framework's style
@@ -23,8 +22,7 @@ http://well-typed.com
 [distributed-process]:
 http://hackage.haskell.org/package/distributed-process
 
-General Style
--------------
+## General Style
 
 (section adapted from the [GHC Coding Style Guidelines][ghc-style].)
 
@@ -43,8 +41,7 @@ used in the file you're editing. If you must make stylistic changes,
 commit them separately from functional changes, so that someone
 looking back through the change logs can easily distinguish them.
 
-Formatting
-----------
+## Formatting
 
 ### Line Length
 
@@ -253,8 +250,7 @@ foobar =
       Just j -> bar
 ```
 
-Imports
--------
+## Imports
 
 Imports should be listed in alphabetical order with no intervening
 blank lines, except for any explicit `Prelude` import, which must
@@ -287,8 +283,7 @@ import qualified Data.Map as Map                  -- good
 import qualified Data.Map as M                    -- not so good
 ```
 
-Comments
---------
+## Comments
 
 Comments should be placed immediately *before* the line(s) of code
 they pertain to.
@@ -370,8 +365,7 @@ API name if:
 * Only for the first occurrence of each API name in the comment (don't
   bother repeating a link)
 
-Naming
-------
+## Naming
 
 Use mixed-case when naming functions and camel-case when naming data
 types.
@@ -402,8 +396,7 @@ Use singular when naming modules e.g. use `Data.Map` and
 `Data.ByteString.Internal` instead of `Data.Maps` and
 `Data.ByteString.Internals`.
 
-Misc
-----
+## Misc
 
 ### Warnings
 
