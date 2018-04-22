@@ -435,9 +435,9 @@ module Person
   ) where
 
 data Person = Person
-  { _firstName :: !String  -- ^ First name
-  , _lastName  :: !String  -- ^ Last name
-  , _age       :: !Int     -- ^ Age
+  { _firstName :: !String -- ^ First name
+  , _lastName :: !String -- ^ Last name
+  , _age :: !Int -- ^ Age
   } deriving (Eq, Show)
 
 makeClassy ''Person
