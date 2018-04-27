@@ -47,7 +47,13 @@ due date.
 
 Every public release must include a `CHANGELOG.md` file, in the format
 of [keepachangelog]. New entries to the changelog are integral parts
-of bug fix and feature PR's.
+of bug fix and feature PR's. Always try to link entries to issue
+numbers if a relevant issue exists. It's best to link issues as
+follows:
+
+```
+* Frobnicated knobs. See [#NNN](https://github.com/foocorp/bar/issues/NNN).
+```
 
 Each release has an associated tag of the form `v$VERSION`, GPG-signed
 by the project lead (use `git tag -s`).
