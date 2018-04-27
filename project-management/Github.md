@@ -57,8 +57,11 @@ follows:
 
 Each release has an associated tag of the form `v$VERSION`, GPG-signed
 by the project lead (use `git tag -s`).
+See [this guide][keybase-gpg-github] for setting up an identify if you
+don't already have one.
 
 [keepachangelog]: https://keepachangelog.com/en/1.0.0/
+[keybase-gpg-github]: https://github.com/pstadler/keybase-gpg-github
 
 ## Documentation
 
