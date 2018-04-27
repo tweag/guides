@@ -71,12 +71,13 @@ all documentation in the project.
 
 We do not use [wikis][github-wiki] for documentation. The reasons for
 this are well explained [elsewhere][yesod-documentation-thoughts].
-When using [GitHub pages][github-pages], we *do not* use a separate
-`gh-pages` branch to hold documentation. The reason is that this
-breaks the ability to update documentation atomically with the
-associated code changes. We typically keep the documentation in
-a `docs/` folder. This can readily be deployed to a public site
-using [GitHub pages][github-pages-conf]
+When using [GitHub pages][github-pages], we *do not* use a `gh-pages`
+branch to hold documentation source code separately. The reason is
+that this breaks the ability to update documentation atomically with
+the associated code changes. We typically keep the documentation in
+a `docs/` folder. The *source* for documentation should be kept in the
+same branch than the code that it documents. This can readily be
+deployed to a public site using [GitHub pages][github-pages-conf]
 or [Read the Docs][readthedocs].
 
 [github-pages]: https://pages.github.com/
