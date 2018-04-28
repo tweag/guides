@@ -22,11 +22,16 @@ Labels are also useful to classify issues by type or by component. Use
 colours to distinguish whether a label designates a type, a component
 or something else.
 
+## Milestones
+
+We gate tickets with milestones. Milestones always have an associated
+due date.
+
 ## Project leads
 
 Each project must have a project lead (maintainer). By convention, the
-PL is whoever appears at the top of [`CODEOWNERS`][github-codeowners]
-file, e.g.:
+PL is whoever appears at the top
+of [`CODEOWNERS` file][github-codeowners], e.g.:
 
 ```
 * @mboes
@@ -38,10 +43,17 @@ override that.
 
 [github-codeowners]: https://help.github.com/articles/about-codeowners/
 
-## Milestones
+## Change management
 
-We gate tickets with milestones. Milestones always have an associated
-due date.
+The default contribution process can be found in
+the [`CONTRIBUTING.md` file](../CONTRIBUTING.md) of this repository.
+Whatever the contribution process, this should
+be [documented][github-contributing].
+
+A corollary of the default contribution process is that all
+significant changes (including bug fixes) should have an issue prior
+to the pull request being opened. Also, if you have write permission
+on a repository, don't fork to open pull requests.
 
 ## Releases
 
