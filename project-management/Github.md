@@ -24,8 +24,10 @@ or something else.
 
 ## Milestones
 
-We gate tickets with milestones. Milestones always have an associated
+We gate tickets with [milestones][github-milestones]. Milestones always have an associated
 due date.
+
+[github-milestones]: https://help.github.com/articles/about-milestones/
 
 ## Project leads
 
