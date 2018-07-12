@@ -112,7 +112,7 @@ If an application must spawn multiple lines to fit within the maximum
 line length, then write one argument on each line following the head,
 indented by one level:
 
-```
+```Haskell
 let'sFold xs = do
     foldr
       (\x y -> ...)
