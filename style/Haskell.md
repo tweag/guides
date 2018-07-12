@@ -115,9 +115,9 @@ indented by one level:
 ```
 let'sFold xs = do
     foldr
-	  (\x y -> ...)
-	  Nothing
-	  xs
+      (\x y -> ...)
+      Nothing
+      xs
 ```
 
 But consider naming the arguments instead to avoid multi-line
