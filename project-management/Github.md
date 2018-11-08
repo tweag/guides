@@ -24,8 +24,10 @@ or something else.
 
 ## Milestones
 
-We gate tickets with [milestones][github-milestones]. Milestones always have an associated
-due date.
+We gate tickets with [milestones][github-milestones]. Milestones
+always have an associated due date. This due date is sometimes used
+for internal planning, and sometimes represent business constraints.
+Use the milestone description to make the meaning clear.
 
 [github-milestones]: https://help.github.com/articles/about-milestones/
 
