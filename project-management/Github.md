@@ -12,11 +12,24 @@ this repository as a starting point.
 
 We use labels to classify tasks by priority, from P0 to P4:
 
-* **P0 (blocker)** Do not do anything else, this is a blocker.
-* **P1 (critical)** Must have.
-* **P2 (major)** Should have.
-* **P3 (minor)** Could have.
-* **P4 (trivial)** Someday/maybe. Consider closing as "wontfix".
+* **P0 (blocker)** Do not do anything else, this is a blocker. Major
+  broken functionality that causes a release to be unusable. This
+  includes regressions introduced in a new release that blocks
+  a significant number of users, or an incompatible breaking change.
+* **P1 (critical)** Must have. Critical feature request or bug fix
+  which should be addressed in the next release, or a serious issue
+  that impacts many users. Typically does not require immediate
+  action.
+* **P2 (major)** Should have. Important feature or defect that is tied
+  to roadmaps or upcoming releases. Moderate live issue in a released
+  version that is inconvenient for a user that needs to be addressed
+  in a upcoming release.
+* **P3 (minor)** Could have. Desirable enhancement or minor bug fix
+  that will benefit a user. Not prioritized into roadmaps or any
+  imminent release.
+* **P4 (trivial)** Someday/maybe. Consider closing as "wontfix". Can
+  be kept open for a potential re-prioritization if more users are
+  impacted.
 
 Labels are also useful to classify issues by type or by component. Use
 colours to distinguish whether a label designates a type, a component
