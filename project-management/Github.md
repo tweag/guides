@@ -10,7 +10,7 @@ this repository as a starting point.
 
 ## Labels
 
-We use labels to classify tasks by priority, from P0 to P4:
+We use labels to classify issues by priority, from P0 to P4:
 
 * **P0 (blocker)** Do not do anything else, this is a blocker. Major
   broken functionality that causes a release to be unusable. This
@@ -37,10 +37,10 @@ or something else.
 
 ## Milestones
 
-We gate tickets with [milestones][github-milestones]. Milestones
-always have an associated due date. This due date is sometimes used
-for internal planning, and sometimes represent business constraints.
-Use the milestone description to make the meaning clear.
+We gate issues with [milestones][github-milestones]. Milestones always
+have an associated due date. This due date is sometimes used for
+internal planning, and sometimes represent business constraints. Use
+the milestone description to make the meaning clear.
 
 [github-milestones]: https://help.github.com/articles/about-milestones/
 
