@@ -44,6 +44,18 @@ the milestone description to make the meaning clear.
 
 [github-milestones]: https://help.github.com/articles/about-milestones/
 
+## Epics
+
+[Epics][atlassian-epic] map to ["projects"][github-projects]. All the
+issues that pertain to the same epic are added to one project. Enable
+automation so that issues are moved from column to column with minimum
+fuss. There is one project per epic. Use the epic title as the name of
+project. List the goals of the epic (ideally with acceptance criteria)
+in the project description.
+
+[atlassian-epic]: https://www.atlassian.com/agile/project-management/epics
+[github-projects]: https://help.github.com/en/articles/about-project-boards
+
 ## Project leads
 
 Each project must have a project lead (maintainer). By convention, the
