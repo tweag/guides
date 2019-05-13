@@ -10,8 +10,6 @@ Credits
 
 Guides is maintained by [Tweag I/O](http://tweag.io/).
 
-The names and logos for Tweag I/O are trademarks of Tweag I/O Limited.
-
 Have questions? Need help? Tweet at [@tweagio](http://twitter.com/tweagio).
 
 License
