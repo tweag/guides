@@ -15,11 +15,12 @@ confirmation and we will close it.
 
 ## Code
 
-1. Explain your idea and discuss your plan with members of the team.
-   The best way to do this is to create an [issue][issue-tracker] or
-   comment on an existing issue.
+1. Explain your idea before getting started and discuss your plan with
+   members of the team. The best way to do this is to create
+   an [issue][issue-tracker] or comment on an existing issue.
 1. Prepare a git commit with your change. Don't forget to
-   add [tests][tests]. Update [README.md](./README.md) if appropriate.
+   add [tests][tests]. Update the [README.md](./README.md) and
+   changelog if appropriate.
 1. [Create a pull request][create-pull-request]. This will start the
    code review process. Enable "Allow edits from maintainers" if the
    branch is on a fork, so that reviewers can fix trivial problems
