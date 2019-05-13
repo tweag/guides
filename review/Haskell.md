@@ -5,29 +5,27 @@ When reviewing Haskell code, do watch out for the following points.
 
 ### Copyright notices at the top of every module
 
+If required by the product owner, check for a copyright notice.
+
 ```Haskell
 -- |
--- Copyright: (C) 2014 Tweag I/O Limited
+-- Copyright: (C) <YEARS> <COPYRIGHT_HOLDER>
 --
 -- Module description
---
 
-{-# LANGUAGE    ... #-}
+{-# LANGUAGE ... #-}
 {-# OPTIONS_GHC ... #-}
 module M where
 
 ...
 ```
-Check that there is *exactly one* `LANGUAGE` pragma per extension, in
-alphabetical order to make it easy to spot duplicates, and ideally
-that extraneous extensions are not turned on.
 
 ### Inverted boolean conditions
 
 Functions like
 ```Haskell
-filter :: (a->Bool) -> [a] -> [a]
-break :: (a->Bool) -> [a] -> ([a],[a])
+filter :: (a -> Bool) -> [a] -> [a]
+break :: (a -> Bool) -> [a] -> ([a],[a])
 when :: Monad m => Bool -> m ()
 or
 and
@@ -52,15 +50,15 @@ case, and the base case has to be defined!
 
 ### Race conditions solved by locks
 
-When MVars are used as a locking mechanisms it should be checked that
+When `MVar`s are used as a locking mechanisms it should be checked that
 the resources for which the `MVar` is intended are really protected,
 and furthermore that such protection is not redundant with other
-locks/MVars.
+locks/`MVar`s.
 
-### Unrevertable changes under MVar
+### Unrevertable changes under `MVar`
 
-When an exception is thrown during an MVar action (`modifyMVar`,
-`withMVar`..) the MVar is reverted to its previous state. However,
+When an exception is thrown during an `MVar` action (`modifyMVar`,
+`withMVar`..) the `MVar` is reverted to its previous state. However,
 this behaviour may lead to an inconsistent state in the presence of
 other side effects, e.g. network actions or changes in other mutable
 variables.
