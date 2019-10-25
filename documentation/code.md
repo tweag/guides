@@ -1,9 +1,9 @@
 # Code documentation guidelines
 
 This document discusses guidelines for writing package and module
-level documentation. For explicit standards on documentation and
-general style, refer to the
-`[style guide](https://github.com/tweag/guides/tree/master/style/Haskell.md)`.
+level documentation. For the sake of brevity, this guide only
+collects criteria to spot common omissions. See the
+[Resources](#resources) section for more information.
 
 We define code documentation of a package to be the comments in all
 the source files in the package, plus any examples, plus any text
@@ -229,3 +229,9 @@ follow them, they could be incorporated together with new changes.
 
 In particular, small bug-fixes don't need text documentation to be
 updated unless it is somehow invalidated by the fix.
+
+## Resources
+
+* [A Haskell style guide](https://github.com/tweag/guides/tree/master/style/Haskell.md)
+* [Posts](http://jacobian.org/writing/great-documentation/) advising on how to write good documentation
+* [A recorded presentation](https://www.youtube.com/watch?v=8TD-20Mb_7M) at Zurihack 2018 on how to write good documentation
