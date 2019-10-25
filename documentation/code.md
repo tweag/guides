@@ -13,11 +13,11 @@ Code documentation should be useful to both users and maintainers of a
 package. Documentation must:
 
 - Provide an overview of what problem each package and module solves.
+- Point to examples and material explaining how to use a package.
 - Explain the strategy used to solve the problem.
+- Help locating the implementation of a specific piece of the design.
 - Explain the details of the implementation where the intention of the
   author is not readily apparent from reading the code.
-- Point to examples and material explaining how to use a package.
-- Help find the code responsible for performing a specific task.
 - Point to resources to learn the libraries and frameworks used by a package.
 
 ## Text files
