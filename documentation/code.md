@@ -1,8 +1,8 @@
 # Code documentation guidelines
 
 This document discusses guidelines for writing package and module
-level documentation. For the sake of brevity, this guide only
-collects criteria to spot common omissions. See the
+level documentation. For the sake of brevity, this guide collects
+criteria for completeness rather than clarity. See the
 [Resources](#resources) section for more information.
 
 We define code documentation of a package to be the comments in all
