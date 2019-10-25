@@ -36,8 +36,7 @@ From the [inline-java](https://github.com/tweag/inline-java) readme:
     import declarations using the FFI. In the style of inline-c for C
     and inline-r for calling R, inline-java lets you name any function
     to call inline in your code. It is implemented on top of the
-    [jni](https://github.com/LeapYear/leapyear/blob/master/dep/inline-java/jni)
-    and [jvm](https://github.com/LeapYear/leapyear/blob/master/dep/inline-java/jvm)
+    [jni](jni) and [jvm](jvm)
     packages and makes use of
     [quasi-quotations](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/glasgow_exts.html#template-haskell-quasi-quotation).
     ...
@@ -90,8 +89,9 @@ files explaining a package. This hierarchy must include pointers to:
     For more details on how to use inline-java, there is this
     [tutorial](https://www.tweag.io/posts/2017-09-15-inline-java-tutorial.html).
     ...
-    Start navigating the code at the note "Implementation strategy" in
-    [Language.Java.Inline](https://github.com/tweag/inline-java/src/Language/Java/Inline.hs).
+    To start navigating the code, grep for the note "Implementation strategy",
+    which at the time of this writing is in
+    [Language.Java.Inline](src/Language/Java/Inline.hs).
 
 The links to jni, jvm and quasi-quotations in the GHC user guide
 provide further references to understanding Java, the JNI and
