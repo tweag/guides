@@ -23,7 +23,7 @@ package. Documentation must:
 ## Text files
 
 All packages should offer a README with a synopsis of what problem the
-package solves and the strategy it takes to solving it.
+package solves, how it is used, and the strategy it takes to solving it.
 
 **Example**
 
