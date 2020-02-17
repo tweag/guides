@@ -113,7 +113,7 @@ here in order of preference.
 Whatever the chosen way, the following facts should be communicated
 for each definition in the code.
 
-Data types
+### Data types
 
 - The meaning of the type
     - What do the values of the type represent in the problem domain?
@@ -151,7 +151,7 @@ Data types
           , lineNumber :: Integer
           }
 
-Functions
+### Functions
 
 - Which preconditions and postconditions do they have?
 - Are there any properties relating them to other functions?
@@ -192,7 +192,7 @@ Functions
         , namePrimDouble :: Name
         }
 
-Modules
+### Modules
 
 - What criteria should be used to decide if a function or interface
   belongs to the module?
