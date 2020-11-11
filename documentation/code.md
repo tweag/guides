@@ -113,7 +113,7 @@ here in order of preference.
 Whatever the chosen way, the following facts should be communicated
 for each definition in the code.
 
-### Data types
+### Types/Classes
 
 - The meaning of the type
     - What do the values of the type represent in the problem domain?
@@ -151,7 +151,7 @@ for each definition in the code.
           , lineNumber :: Integer
           }
 
-### Functions
+### Functions/Methods
 
 - Which preconditions and postconditions do they have?
 - Are there any properties relating them to other functions?
