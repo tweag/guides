@@ -235,3 +235,10 @@ updated unless it is somehow invalidated by the fix.
 * [A Haskell style guide](https://github.com/tweag/guides/tree/master/style/Haskell.md)
 * [Posts](http://jacobian.org/writing/great-documentation/) advising on how to write good documentation
 * [A recorded presentation](https://www.youtube.com/watch?v=8TD-20Mb_7M) at Zurihack 2018 on how to write good documentation
+
+## Improving this document
+
+It has been suggested that examples based in other languages than
+Haskell could be illusrative. If you find any cases where the
+advice in this guide is not readily applicable, please, consider
+submitting a pull request.
