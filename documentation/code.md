@@ -82,7 +82,8 @@ files explaining a package. This hierarchy must include pointers to:
           when there are other possible choices.
 - the main entry points in the code for understanding the
   implementation,
-- resources for learning the libraries and frameworks the package depends on.
+- resources for learning the libraries and frameworks on which the
+  package depends.
 
 **Example**
 
@@ -222,9 +223,9 @@ follow them, they could be incorporated together with new changes.
   is, the hierarchy of text files needs to be fleshed out sufficiently
   so the new state can be communicated to a person unfamiliar with the
   package. Examples:
-    - The scope of the solution a package implements changes, as a
+    - The scope of the solution a package implements changes as a
       result of adding or removing definitions.
-    - The way in which a package solves the problem changes, as the
+    - The way in which a package solves the problem changes as the
       result of a total or partial redesign.
 
 In particular, small bug-fixes don't need text documentation to be
