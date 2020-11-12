@@ -23,11 +23,12 @@ package. Documentation must:
 ## Text files
 
 All packages should offer a README with a synopsis of what problem the
-package solves, how it is used, and the strategy it takes to solving it.
+package solves, how is the package used, and the strategy it uses to solve the
+problem.
 
 **Example**
 
-From the [inline-java](https://github.com/tweag/inline-java) readme:
+From the [inline-java](https://github.com/tweag/inline-java) README:
 
     The Haskell standard includes a native foreign function interface
     (FFI). Using it can be a bit involved and only C support is
@@ -44,22 +45,22 @@ From the [inline-java](https://github.com/tweag/inline-java) readme:
     the JVM and communicates to it through the Java Native Interface
     (JNI). Much of the low level details of using the JNI are hidden
     from the user.
-    
+
     It is also possible to have the JVM load a Haskell library and
     invoke Haskell functions that can interact with the JVM using java
     quasi-quotations, e.g. what
     [sparkle](https://github.com/tweag/sparkle) does.
-    
+
     A java quasiquotation ensures that Haskell and Java agree on the
     values that are passed between the runtimes, causes the java
     compiler to produce the Java bytecode, and then generates the
     necessary JNI calls to load and execute the bytecode in the JVM.
-    
+
     inline-java uses whatever java compiler is found in the PATH
     environment variable.
 
 In principle, the author is free to include more documentation in the
-README or to put it in separate files. If it is placed in other files
+README or to put it in separate files. If documentation is placed in other files
 though, these files should be referenced from the README.
 
 The README is considered to be the root of all the hierarchy of text
@@ -81,8 +82,7 @@ files explaining a package. This hierarchy must include pointers to:
           when there are other possible choices.
 - the main entry points in the code for understanding the
   implementation,
-- resources for learning the libraries and frameworks on which the
-  package depends.
+- resources for learning the libraries and frameworks the package depends on.
 
 **Example**
 
@@ -110,7 +110,7 @@ here in order of preference.
 3. Conventions
 4. Comments (please refer to [Haddock documentation](https://haskell-haddock.readthedocs.io/en/latest/markup.html#))
 
-Whatever the chosen way, the following facts should be communicated
+Whatever the chosen way is, the following facts should be communicated
 for each definition in the code.
 
 ### Types/Classes
@@ -118,7 +118,7 @@ for each definition in the code.
 - The meaning of the type
     - What do the values of the type represent in the problem domain?
     - If the type has type parameters
-        - What are they meant to be instantiated to?
+        - What are they meant to be instantiated with?
         - Do they correspond to some part of the problem domain as well?
 - Data constructors
     - How do they relate to the problem domain?
@@ -165,15 +165,15 @@ for each definition in the code.
     --
     -- If mapping over QQOccs, use ‘unliftQQOccJTypes’ instead.
     unliftJType :: JTypeNames -> Type -> CoreM (SomeSing JType)
-    
+
     -- | Returns ...
     --
     -- If mapping over multiple arguments, use ‘unliftJTypes’ instead.
     unliftQQOccJTypes :: JTypeNames -> QQOcc Type -> CoreM (QQOcc (SomeSing JType))
-    
+
     -- | Equivalent to @findJTypeNames >>= mapM . unliftQQOccJType@
     unliftJTypes :: [QQOcc Type] -> CoreM [QQOcc (SomeSing JType)]
-    
+
     -- | The names of 'JType' data constructors
     data JTypeNames = JTypeNames
         { nameClass :: Name
@@ -212,7 +212,7 @@ follow them, they could be incorporated together with new changes.
   should conform to the guidelines.
 - Old definitions which are modified should conform to the guidelines,
   with the exception of refactorings or fixes which preserve the
-  meaning of functions. 
+  meaning of functions.
 - Definitions which are moved from one place to another unmodified
   don't need to conform.
 - The text documentation of newly added packages should conform to
@@ -222,7 +222,7 @@ follow them, they could be incorporated together with new changes.
   is, the hierarchy of text files needs to be fleshed out sufficiently
   so the new state can be communicated to a person unfamiliar with the
   package. Examples:
-    - The scope of the solution a package implements changes as a
+    - The scope of the solution a package implements changes, as a
       result of adding or removing definitions.
     - The way in which a package solves the problem changes, as the
       result of a total or partial redesign.
@@ -234,11 +234,11 @@ updated unless it is somehow invalidated by the fix.
 
 * [A Haskell style guide](https://github.com/tweag/guides/tree/master/style/Haskell.md)
 * [Posts](http://jacobian.org/writing/great-documentation/) advising on how to write good documentation
-* [A recorded presentation](https://www.youtube.com/watch?v=8TD-20Mb_7M) at Zurihack 2018 on how to write good documentation
+* [A recorded presentation](https://www.youtube.com/watch?v=8TD-20Mb_7M) at ZuriHack 2018 on how to write good documentation
 
 ## Improving this document
 
-It has been suggested that examples based in other languages than
-Haskell could be illusrative. If you find any cases where the
+It has been suggested that examples based on other languages than
+Haskell could be illustrative. If you find any cases where the
 advice in this guide is not readily applicable, please, consider
 submitting a pull request.
